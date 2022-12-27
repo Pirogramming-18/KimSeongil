@@ -22,6 +22,8 @@ div tag는 tag명 생략 가능.*/
     text-indent: 10%;
     overflow: hidden;
     vertical-align: middle;
+    position: relative;
+    top: -6px;
 }
 
 #header-search>a {
@@ -39,7 +41,6 @@ div tag는 tag명 생략 가능.*/
 
 #header-search fieldset {
     vertical-align: middle;
-    margin-top: 10px;
     margin-left: 20px;
     padding: 13px 15px 13px 15px;
     /* padding-left: 10px;
