@@ -1,0 +1,7 @@
+/* 선택자(selector)
+div tag는 tag명 생략 가능.*/
+
+#header_center {
+    margin: 0 auto;
+    width: 1130px;
+}

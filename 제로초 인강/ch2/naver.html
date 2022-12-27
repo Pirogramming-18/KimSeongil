@@ -5,29 +5,35 @@
     <meta charset="utf-8" />
     <title>네이버</title>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./naver.css" />
   </head>
   <body>
     <header>
-      <h1>
-        <a href="https://www.naver.com">네이버</a>
-        <!-- this is a comment.
+      <div id="header_center">
+        <!-- 가운데 정렬용 div --><!-- 속성명 : 속성값; 속성명2: 속성값 -->
+        <!-- 속성간 구분은 semicolon으로 -->
+        <!-- inline style, 권장하지 않음 -->
+        <h1>
+          <a href="https://www.naver.com">네이버</a>
+          <!-- this is a comment.
         a is a 'Tag', and we call the 'href' as 'attribute'.-->
-      </h1>
-      <h2>검색창</h2>
-      <fieldset>
-        <legend>검색</legend>
-        <input type="text" />
-        <button>검색</button>
-        <!--
+        </h1>
+        <h2>검색창</h2>
+        <fieldset>
+          <legend>검색</legend>
+          <input type="text" />
+          <button>검색</button>
+          <!--
       <input type="checkbox" />
       <input type="radio" name="group" />
       <input type="radio" name="group" />
       <input type="radio" name="group" />
       -->
-        <!-- there are two ways to input some text: input, textarea-->
-        <!-- input type = text, checkbox, radio-->
-        <!-- radio types have to group by name(attribute)-->
-      </fieldset>
+          <!-- there are two ways to input some text: input, textarea-->
+          <!-- input type = text, checkbox, radio-->
+          <!-- radio types have to group by name(attribute)-->
+        </fieldset>
+      </div>
     </header>
     <nav>
       <ul>
