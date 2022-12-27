@@ -6,9 +6,20 @@ div tag는 tag명 생략 가능.*/
     width: 1130px;
 }
 
-#header-search>h1 {
-    width: 280px;
+#header-search h1 {
+    width: 222px;
+    height: 52px;
     display: inline-block;
+    background-image: url(./sp_image.png);
+    background-position: 0px -350px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    text-indent: 10%;
+    overflow: hidden;
+}
+
+#header-search>a {
+    text-decoration: none;
 }
 
 /* #header-center h1 {
@@ -21,8 +32,17 @@ div tag는 tag명 생략 가능.*/
 } */
 
 #header-search fieldset {
-    width: 520px;
+    margin-left: 20px;
+    padding: 13px 15px 13px 15px;
+    /* padding-left: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 0; */
+    width: 444px;
+    height: 24px;
     display: inline-block;
+    border: 2px solid #19ce60;
+    box-sizing: content-box;
 }
 
 .blind {
