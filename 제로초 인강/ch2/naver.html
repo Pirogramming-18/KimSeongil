@@ -9,30 +9,39 @@
   </head>
   <body>
     <header>
-      <div id="header_center">
+      <div id="header-center">
         <!-- 가운데 정렬용 div --><!-- 속성명 : 속성값; 속성명2: 속성값 -->
         <!-- 속성간 구분은 semicolon으로 -->
         <!-- inline style, 권장하지 않음 -->
-        <h1>
-          <a href="https://www.naver.com">네이버</a>
-          <!-- this is a comment.
-        a is a 'Tag', and we call the 'href' as 'attribute'.-->
-        </h1>
-        <h2>검색창</h2>
-        <fieldset>
-          <legend>검색</legend>
-          <input type="text" />
-          <button>검색</button>
-          <!--
-      <input type="checkbox" />
-      <input type="radio" name="group" />
-      <input type="radio" name="group" />
-      <input type="radio" name="group" />
-      -->
-          <!-- there are two ways to input some text: input, textarea-->
-          <!-- input type = text, checkbox, radio-->
-          <!-- radio types have to group by name(attribute)-->
-        </fieldset>
+        <div>
+          <span>네이버를 시작페이지로</span>
+          <span>쥬니어네이버</span>
+          <span>해피빈</span>
+          <!-- span tag는 자동으로 inline이 적용-->
+          <!-- inline과 inline-block의 차이가 존재-->
+        </div>
+        <div id="header-search">
+          <h1>
+            <a href="https://www.naver.com">네이버</a>
+            <!-- this is a comment.
+              a is a 'Tag', and we call the 'href' as 'attribute'.-->
+          </h1>
+          <h2>검색창</h2>
+          <fieldset>
+            <legend>검색</legend>
+            <input type="text" />
+            <button>검색</button>
+            <!--
+                <input type="checkbox" />
+                <input type="radio" name="group" />
+                <input type="radio" name="group" />
+                <input type="radio" name="group" />
+              -->
+            <!-- there are two ways to input some text: input, textarea-->
+            <!-- input type = text, checkbox, radio-->
+            <!-- radio types have to group by name(attribute)-->
+          </fieldset>
+        </div>
       </div>
     </header>
     <nav>
