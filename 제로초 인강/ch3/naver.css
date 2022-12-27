@@ -1,21 +1,27 @@
 /* 선택자(selector)
 div tag는 tag명 생략 가능.*/
 
+* {
+    box-sizing: border-box
+}
+
 #header-center {
     margin: 0 auto;
     width: 1130px;
 }
 
-#header-search h1 {
-    width: 222px;
-    height: 52px;
+#header-search a h1 {
+    width: 223px;
+    height: 57px;
     display: inline-block;
     background-image: url(./sp_image.png);
-    background-position: 0px -350px;
+    background-position: 0px -158px;
     background-repeat: no-repeat;
+    background-size: 200%;
     vertical-align: top;
     text-indent: 10%;
     overflow: hidden;
+    vertical-align: middle;
 }
 
 #header-search>a {
@@ -32,17 +38,26 @@ div tag는 tag명 생략 가능.*/
 } */
 
 #header-search fieldset {
+    vertical-align: middle;
+    margin-top: 10px;
     margin-left: 20px;
     padding: 13px 15px 13px 15px;
     /* padding-left: 10px;
     padding-top: 12px;
     padding-bottom: 12px;
     padding-right: 0; */
-    width: 444px;
-    height: 24px;
+    width: 478px;
+    height: 54px;
     display: inline-block;
     border: 2px solid #19ce60;
-    box-sizing: content-box;
+    /* hex or rgb? */
+}
+
+#header-search fieldset input {
+    border: none;
+    padding: 0;
+    outline: none;
+    /* 오 이건 내가 F12로 직접 찾음 */
 }
 
 .blind {
