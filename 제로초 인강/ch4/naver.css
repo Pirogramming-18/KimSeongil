@@ -11,9 +11,13 @@ body {
     margin: 0%;
 }
 
-#header-center {
+.center-align {
     margin: 0 auto;
     width: 1130px;
+}
+
+.nav {
+    text-decoration: none;
 }
 
 #header-search a h1 {
@@ -109,4 +113,14 @@ body {
     display: inline-block;
     width: 100px;
     height: 100px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
 }
