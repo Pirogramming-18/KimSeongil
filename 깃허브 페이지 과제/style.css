@@ -1,0 +1,204 @@
+main,
+nav {
+    background-color: #242424;
+}
+
+body {
+    font-family: 'Noto Sans', 'sans-serif';
+}
+
+nav {
+    padding-top: 48px;
+}
+
+.center-align {
+    margin: 0 auto;
+    width: 1366px;
+}
+
+
+#nav-logo a h1 {
+    background-image: url(logo.png);
+    width: 48px;
+    height: 48px;
+    background-size: cover;
+    float: left;
+}
+
+#nav-list ul {
+    margin: 12px 260px 12px 0px;
+    list-style: none;
+    float: left;
+}
+
+#nav-list li {
+    float: left;
+    color: white;
+}
+
+.nav-expand {
+    float: left;
+    background-image: url(expand.png);
+    width: 16px;
+    height: 16px;
+    background-size: cover;
+    margin-top: 4px;
+    margin-right: 16px;
+    vertical-align: top;
+}
+
+.next-expand {
+    padding-right: 4px;
+}
+
+.no-expand {
+    float: left;
+    padding-right: 16px;
+}
+
+#nav-logo>fieldset {
+    float: left;
+    width: 256px;
+    height: 36px;
+    background-color: #5f5f5f;
+    border: 1px solid #353535;
+    border-radius: 8px;
+    margin-top: 6px;
+}
+
+#nav-logo>fieldset input {
+    width: 200px;
+    height: 24px;
+    color: rgb(200, 200, 200);
+    background-color: transparent;
+    border-color: transparent;
+    float: left;
+}
+
+#nav-logo fieldset button {
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgb(200, 200, 200);
+    padding: 0;
+    float: left;
+    background-color: transparent;
+}
+
+#search-image {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(expand.png);
+    background-size: cover;
+    vertical-align: top;
+}
+
+#nav-signin {
+    float: left;
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px 12px 16px;
+}
+
+#nav-signup {
+    float: left;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px 10px 16px;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 8px;
+}
+
+#main-welcome {
+    display: inline-block;
+    padding: 120px 220px 220px 120px;
+}
+
+#main-welcome h2 {
+    display: inline-block;
+    font-size: 60px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+#main-introduce {
+    display: inline-block;
+    margin-top: 20px;
+    color: rgb(160, 160, 160);
+    letter-spacing: 0.5px;
+    font-size: 20px;
+}
+
+.font-white {
+    color: rgb(240, 240, 240);
+    text-decoration: underline;
+    text-decoration-color: #585858;
+    text-underline-position: under;
+}
+
+#main-signup {
+    vertical-align: top;
+    margin-top: 8px;
+    display: inline-block;
+    width: 480px;
+    height: 540px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+#main-signup .main-wrapper {
+    padding: 24px;
+    height: 480px;
+    position: relative;
+}
+
+.main-signup-userinfo {
+    display: flex;
+    padding-bottom: 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.signup-input {
+    width: 432px;
+    height: 48px;
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 8px;
+}
+
+.main-signup-notice {
+    font-size: 12px;
+    color: rgb(50, 50, 50);
+}
+
+.other-page {
+    color: #4796f7;
+}
+
+#signup-button>button {
+    color: white;
+    vertical-align: top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 432px;
+    height: 64px;
+    background-color: rgb(58, 180, 58);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px 0px;
+}
+
+#footer-image {
+    float: right;
+    margin-right: 400px;
+    width: 700px;
+    height: 284px;
+    display: flex;
+    background-image: url(./footer_image.jpg);
+    background-size: cover;
+}

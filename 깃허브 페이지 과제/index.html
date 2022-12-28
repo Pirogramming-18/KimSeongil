@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        padding: 0%;
+        margin: 0%;
+      }
+      .inline-block {
+        display: inline-block;
+      }
+      .blind {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0px;
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="center-align">
+        <div id="nav-logo">
+          <a href="https://www.github.com">
+            <h1>
+              <span class="blind">GitHub</span>
+            </h1>
+          </a>
+          <div id="nav-list">
+            <ul>
+              <li class="next-expand">Why GitHub?</li>
+              <div class="nav-expand"></div>
+              <li class="no-expand">Team</li>
+              <li class="no-expand">EnterPrise</li>
+              <li class="next-expand">Explore</li>
+              <div class="nav-expand"></div>
+              <li class="no-expand">Marketplace</li>
+              <li class="next-expand">Pricing</li>
+              <div class="nav-expand"></div>
+            </ul>
+          </div>
+          <fieldset>
+            <legend class="blind">Search</legend>
+            <input type="text" value="Search GitHub" />
+            <button>
+              <span class="blind">Search</span>
+              <span id="search-image"></span>
+            </button>
+          </fieldset>
+          <a href="https://github.com/login" id="nav-signin">Sign in</a>
+          <a href="https://github.com/signup" id="nav-signup">Sign up</a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="center-align">
+        <div id="main-welcome">
+          <div>
+            <h2>Built for<br />developers</h2>
+          </div>
+          <div id="main-introduce">
+            <span>
+              GitHub is a devleopment platform inspired by the <br />
+              way you work. From <span class="font-white">open source</span> to
+              <span class="font-white">business</span>, you<br />
+              can host and review code, manage projects, and<br />
+              build software alongside 50 million developers.
+            </span>
+          </div>
+        </div>
+        <div id="main-signup">
+          <h3 class="blind">github signup</h3>
+          <div class="main-wrapper">
+            <span class="main-signup-userinfo">Username</span>
+            <input type="text" class="signup-input" />
+            <span class="main-signup-userinfo">Email</span>
+            <input type="text" class="signup-input" />
+            <span class="main-signup-userinfo">Password</span>
+            <input type="text" class="signup-input" />
+            <span class="main-signup-notice"
+              >Make sure it's at least 15 characters OR at least 8 characters including a number and a lowercase letter.
+              <span class="other-page">Learn more.</span>
+            </span>
+            <div id="signup-button">
+              <button>Sign up for GitHub</button>
+            </div>
+            <span class="main-signup-notice"
+              >By clicking "Sign up for GitHub:", you agree to our <span class="other-page">Terms of Service</span> and
+              <span class="other-page">Privacy Statement.</span> We'll occasionally send you account related emails.
+            </span>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div id="footer-image"></div>
+    </footer>
+  </body>
+</html>
