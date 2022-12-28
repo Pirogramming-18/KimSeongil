@@ -1,0 +1,143 @@
+/* 선택자(selector)
+div tag는 tag명 생략 가능.*/
+
+/* CSS 우선순위 : !important > inline style > id > class(다른 어트리뷰트) >  tag */
+
+/* block format context */
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    padding: 0%;
+    margin: 0%;
+}
+
+.center-align {
+    margin: 0 auto;
+    width: 1130px;
+}
+
+.nav_green {
+    text-decoration: none;
+    margin-left: 2px;
+    color: #19ce60;
+    font-weight: 600;
+}
+
+.nav {
+    text-decoration: none;
+    margin-left: 2px;
+    font-weight: 600;
+}
+
+.nav_mail {
+    text-decoration: none;
+    margin-left: 0px;
+}
+
+#header-search a h1 {
+    width: 223px;
+    height: 57px;
+    display: inline-block;
+    background-image: url(./sp_image.png);
+    background-position: 0px -158px;
+    background-repeat: no-repeat;
+    background-size: 200%;
+    vertical-align: top;
+    text-indent: 10%;
+    overflow: hidden;
+    vertical-align: middle;
+    position: relative;
+    top: -6px;
+}
+
+#header-search>a {
+    text-decoration: none;
+}
+
+/* #header-center h1 {
+    자손 선택자
+    꺾쇠 쓰기 귀찮으면 자손 선택자 씀
+} */
+
+/* #header-search>h2 {
+    display: none;
+} */
+
+#header-search fieldset {
+    vertical-align: middle;
+    margin-left: 20px;
+    padding: 13px 15px 13px 15px;
+    /* padding-left: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 0; */
+    width: 478px;
+    height: 54px;
+    display: inline-block;
+    border: 2px solid #19ce60;
+    /* hex or rgb? */
+    position: relative;
+}
+
+#header-search fieldset input {
+    width: 405px;
+    height: 23px;
+    display: inline-block;
+    border: none;
+    padding: 0;
+    outline: none;
+    /* 오 이건 내가 F12로 직접 찾음 */
+}
+
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+#header-search fieldset button {
+    width: 54px;
+    height: 54px;
+    border: none;
+    padding: 0;
+    background: #19ce60;
+    position: absolute;
+    right: -2px;
+    top: -2px;
+}
+
+#search-image {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-position: -418px -24px;
+    background-size: 2000%;
+    background-repeat: no-repeat;
+    background-image: url(./sp_image.png);
+    vertical-align: top;
+}
+
+#fixed {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+}
