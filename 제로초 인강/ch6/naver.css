@@ -201,6 +201,8 @@ main {
     background-color: #555;
     margin-top: 20px;
     vertical-align: top;
+    margin-right: 8px;
+    margin-bottom: 8px;
     /* border box로 줘서 마진줌*/
 }
 
@@ -210,6 +212,8 @@ main {
     height: 150px;
     margin-top: 20px;
     background-color: #555;
+    margin-right: 8px;
+    margin-bottom: 8px;
     vertical-align: top;
 }
 
@@ -217,15 +221,26 @@ main {
     display: inline-block;
     width: 740px;
     height: 120px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    background-color: #FFF;
 }
 
-.main-newsstand {
+#main-stocks {
+    display: inline-block;
+    width: 281px;
+    height: 47px;
+    background-color: #555;
+    vertical-align: top;
+}
+
+#main-newsstand {
     display: inline-block;
     width: 740px;
     height: 120px;
 }
 
-.main-second-ad {
+#main-second-ad {
     display: inline-block;
     width: 332px;
     height: 150px;
