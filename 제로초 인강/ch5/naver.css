@@ -19,22 +19,17 @@ body {
     width: 1130px;
 }
 
-.nav_green {
-    text-decoration: none;
-    margin-left: 2px;
-    color: #19ce60;
-    font-weight: 600;
+#header-top {
+    float: right;
+    color: #888;
+    letter-spacing: -1px;
+    /*letter-spacing : 글자 사이의 간격(자간)*/
+    font-size: 11px;
+    line-height: 22px;
 }
 
-.nav {
-    text-decoration: none;
-    margin-left: 2px;
-    font-weight: 600;
-}
-
-.nav_mail {
-    text-decoration: none;
-    margin-left: 0px;
+#header-search {
+    clear: both;
 }
 
 #header-search a h1 {
@@ -122,6 +117,25 @@ body {
     background-image: url(./sp_image.png);
     vertical-align: top;
 }
+
+.nav_green {
+    text-decoration: none;
+    margin-left: 2px;
+    color: #19ce60;
+    font-weight: 600;
+}
+
+.nav {
+    text-decoration: none;
+    margin-left: 2px;
+    font-weight: 600;
+}
+
+.nav_mail {
+    text-decoration: none;
+    margin-left: 0px;
+}
+
 
 #fixed {
     position: fixed;
