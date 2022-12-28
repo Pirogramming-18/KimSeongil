@@ -292,6 +292,7 @@ h6 {
 
 #main-yeonhap-news ol {
     display: inline-block;
+    list-style: none;
 }
 
 #main-stocks {
@@ -373,16 +374,52 @@ h6 {
     width: 589px;
     margin: 0 8px;
     background-color: white;
+    position: relative;
+    /* 컨테이닝 블록으로 만들자
+     */
 }
 
 #subject-list ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 45px;
 }
 
 #subject-list li {
     float: left;
+    margin-right: 10px;
+    padding: 14px 7px 0;
+}
+
+#subject-list li.highlight {
+    border-bottom: 3px solid #00c73c;
+    height: 45px;
+    font-weight: 700;
+    color: #00b336;
+}
+
+.opacity {
+    opacity: 0.66;
+    background: white;
+}
+
+.opacity.left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 45px;
+    width: 15px;
+}
+
+.opacity.right {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 45px;
+    width: 15px;
 }
 
 #subject-all,
