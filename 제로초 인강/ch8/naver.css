@@ -31,6 +31,9 @@ position : absoulte ( 형제 태그일 때도 유효 )
 
 /* 다른애 위에 겹치는거? z-index와 position 활용 */
 
+/* 네모 박스들을 section tag로 의미를 부여했는지!?
++ section 안에는 heading을 하나씩 넣어주자.
+heading안의 글씨는 blind로 글씨 없애도 된다.*/
 
 * {
     box-sizing: border-box
