@@ -19,7 +19,17 @@ position : absoulte ( 형제 태그일 때도 유효 )
 
 /* IE가 없어졌으니 display: flex 적극 활용 가능 */
 
-/*7-3*/
+/*7-4 z-index 속성이 높은 순으로 앞,뒤 배치 가능
+
+쌓임 맥락(stacking context)이란?
+- z-index가 auto가 아닌 것들(flex 포함)
+- 쌓임 맥락들이 모여서 계층 구조를 이룬다.
+- 자손 쌓임 맥락만이 부모 쌓임 맥락의 영향을 받는다.
+- 자손의 z-index가 아무리 높아도 해당 부모의 z-index가 다른 태그보다 낮다면,
+쌓임 맥락에서 이길수가 없다. 
+*/
+
+
 
 * {
     box-sizing: border-box
