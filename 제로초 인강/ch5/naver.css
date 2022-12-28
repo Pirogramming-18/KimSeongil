@@ -4,6 +4,11 @@ div tag는 tag명 생략 가능.*/
 /* CSS 우선순위 : !important > inline style > id > class(다른 어트리뷰트) >  tag */
 
 /* block format context */
+
+/* nth-of-type과 nth-of-child
+nth-of-child를 같은 태그 타입만 구분해라! 라고 쳤을 때도 다른 태그도 자식으로 포함
+같은 태그 타입을 사용하려면 nth-of-type*/
+
 * {
     box-sizing: border-box
 }
