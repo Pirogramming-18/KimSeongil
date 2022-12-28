@@ -1,0 +1,306 @@
+/* 선택자(selector)
+div tag는 tag명 생략 가능.*/
+
+/* CSS 우선순위 : !important > inline style > id > class(다른 어트리뷰트) >  tag */
+
+/* block format context */
+
+/* nth-of-type과 nth-of-child
+nth-of-child를 같은 태그 타입만 구분해라! 라고 쳤을 때도 다른 태그도 자식으로 포함
+같은 태그 타입을 사용하려면 nth-of-type*/
+
+/* margin collapsing 피하기 방법
+float : left와 width 100% ( 부모 태그 어트리뷰트에다가 )
+position : absoulte ( 형제 태그일 때도 유효 )
+블록 포맷 컨텍스트로 3가지 해결 방법 -> display : inline-block, width:100% 주기
+*/
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    padding: 0%;
+    margin: 0%;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", helvetica, sans-serif;
+}
+
+.center-align {
+    margin: 0 auto;
+    width: 1130px;
+}
+
+header {
+    height: 170px;
+}
+
+#header-top {
+    float: right;
+    color: #888;
+    letter-spacing: -1px;
+    /*letter-spacing : 글자 사이의 간격(자간)*/
+    font-size: 11px;
+    line-height: 22px;
+}
+
+#header-search {
+    padding-top: 20px;
+    clear: both;
+}
+
+#header-search a h1 {
+    width: 223px;
+    height: 57px;
+    display: inline-block;
+    background-image: url(./sp_image.png);
+    background-position: 0px -158px;
+    background-repeat: no-repeat;
+    background-size: 200%;
+    vertical-align: top;
+    text-indent: 10%;
+    overflow: hidden;
+    vertical-align: middle;
+    position: relative;
+    top: -6px;
+}
+
+#header-search>a {
+    text-decoration: none;
+}
+
+/* #header-center h1 {
+    자손 선택자
+    꺾쇠 쓰기 귀찮으면 자손 선택자 씀
+} */
+
+/* #header-search>h2 {
+    display: none;
+} */
+
+#header-search fieldset {
+    vertical-align: middle;
+    margin-left: 20px;
+    padding: 13px 15px 13px 15px;
+    /* padding-left: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 0; */
+    width: 478px;
+    height: 54px;
+    display: inline-block;
+    border: 2px solid #19ce60;
+    /* hex or rgb? */
+    position: relative;
+}
+
+#header-search fieldset input {
+    width: 360px;
+    height: 23px;
+    display: inline-block;
+    border: none;
+    padding: 0;
+    outline: none;
+    /* 오 이건 내가 F12로 직접 찾음 */
+}
+
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+#header-search fieldset button {
+    width: 54px;
+    height: 54px;
+    border: none;
+    padding: 0;
+    background: #19ce60;
+    position: absolute;
+    right: -2px;
+    top: -2px;
+}
+
+#search-image {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-position: -418px -24px;
+    background-size: 2000%;
+    background-repeat: no-repeat;
+    background-image: url(./sp_image.png);
+    vertical-align: top;
+}
+
+nav {
+    height: 46px;
+    border-top: 1px solid #f1f3f6;
+    border-bottom: 1px solid #d1d8e4;
+}
+
+nav ul {
+    margin: 0;
+    padding: 11px 0px 0px 0px;
+    list-style: none;
+    font-size: 12px;
+}
+
+.nav_green {
+    text-decoration: none;
+    margin-left: 4px;
+    color: #19ce60;
+    font-weight: 600;
+}
+
+.nav {
+    text-decoration: none;
+    margin-left: 4px;
+    font-weight: 600;
+}
+
+.nav_mail {
+    text-decoration: none;
+    margin-left: 0px;
+}
+
+.nav_more {
+    position: relative;
+    left: 6px;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #202020;
+}
+
+nav li {
+    display: inline-block;
+}
+
+#fixed {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+
+main {
+    background-color: #f2f4f7;
+    display: inline-block;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0px;
+}
+
+#main-ad {
+    display: inline-block;
+    width: 740px;
+    height: 120px;
+    background-color: #FFF;
+    margin-top: 20px;
+    vertical-align: top;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    /* border box로 줘서 마진줌*/
+}
+
+#main-login {
+    display: inline-block;
+    width: 332px;
+    height: 120px;
+    margin-top: 20px;
+    background-color: #FFF;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    vertical-align: top;
+}
+
+#main-yeonhap-news {
+    display: inline-block;
+    width: 740px;
+    height: 48px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    background-color: #FFF;
+}
+
+#main-yeonhap-news h3 {
+    display: inline-block;
+}
+
+#main-yeonhap-news ol {
+    display: inline-block;
+}
+
+#main-stocks {
+    display: inline-block;
+    width: 332px;
+    height: 48px;
+    background-color: #FFF;
+    vertical-align: top;
+}
+
+#main-newsstand {
+    display: inline-block;
+    width: 740px;
+    height: 246px;
+    background-color: white;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    vertical-align: top;
+}
+
+#main-newsstand h3 {
+    display: inline-block;
+    vertical-align: middle;
+    height: 45px;
+    border-bottom: 1px solid #ebeef3;
+}
+
+#main-newsstand ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#main-newsstand li {
+    float: left;
+    width: 123px;
+    height: 67px;
+    border-right: 1px solid #f1f3f6;
+    border-bottom: 1px solid #f1f3f6;
+    text-align: center;
+}
+
+#main-newsstand li img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    object-fit: scale-down;
+    width: 90px;
+    height: 90px;
+}
+
+#main-second-ad {
+    display: inline-block;
+    width: 332px;
+    height: 150px;
+    background-color: #555;
+}
+
+.main-login {
+    display: inline-block;
+    width: 740px;
+    height: 120px;
+}
