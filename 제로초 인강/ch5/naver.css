@@ -12,11 +12,16 @@ html,
 body {
     padding: 0%;
     margin: 0%;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", helvetica, sans-serif;
 }
 
 .center-align {
     margin: 0 auto;
     width: 1130px;
+}
+
+header {
+    height: 170px;
 }
 
 #header-top {
@@ -29,6 +34,7 @@ body {
 }
 
 #header-search {
+    padding-top: 20px;
     clear: both;
 }
 
@@ -78,7 +84,7 @@ body {
 }
 
 #header-search fieldset input {
-    width: 405px;
+    width: 360px;
     height: 23px;
     display: inline-block;
     border: none;
@@ -118,16 +124,29 @@ body {
     vertical-align: top;
 }
 
+nav {
+    height: 46px;
+    border-top: 1px solid #f1f3f6;
+    border-bottom: 1px solid #d1d8e4;
+}
+
+nav ul {
+    margin: 0;
+    padding: 11px 0px 0px 0px;
+    list-style: none;
+    font-size: 12px;
+}
+
 .nav_green {
     text-decoration: none;
-    margin-left: 2px;
+    margin-left: 4px;
     color: #19ce60;
     font-weight: 600;
 }
 
 .nav {
     text-decoration: none;
-    margin-left: 2px;
+    margin-left: 4px;
     font-weight: 600;
 }
 
@@ -136,6 +155,18 @@ body {
     margin-left: 0px;
 }
 
+.nav_more {
+    position: relative;
+    left: 6px;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #202020;
+}
+
+nav li {
+    display: inline-block;
+}
 
 #fixed {
     position: fixed;
@@ -144,14 +175,4 @@ body {
     display: inline-block;
     width: 100px;
     height: 100px;
-}
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-nav li {
-    display: inline-block;
 }
