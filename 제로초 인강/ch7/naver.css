@@ -15,6 +15,10 @@ position : absoulte ( 형제 태그일 때도 유효 )
 블록 포맷 컨텍스트로 3가지 해결 방법 -> display : inline-block, width:100% 주기
 */
 
+/* 자식의 margin은 최대한 부모로, 그래야 margin collapsing 방지 */
+
+/* IE가 없어졌으니 display: flex 적극 활용 가능 */
+
 * {
     box-sizing: border-box
 }
@@ -37,6 +41,8 @@ header {
 
 #header-top {
     float: right;
+    margin-top: 8px;
+    margin-right: 40px;
     color: #888;
     letter-spacing: -1px;
     /*letter-spacing : 글자 사이의 간격(자간)*/
@@ -262,7 +268,7 @@ h6 {
 }
 
 #main-newsstand h3 {
-    display: inline-block;
+    display: flex;
     vertical-align: middle;
     height: 45px;
     border-bottom: 1px solid #ebeef3;
@@ -289,7 +295,7 @@ h6 {
     transform: translateY(-50%);
     object-fit: scale-down;
     width: 90px;
-    height: 90px;
+    height: 40px;
 }
 
 #main-second-ad {
