@@ -19,6 +19,8 @@ position : absoulte ( 형제 태그일 때도 유효 )
 
 /* IE가 없어졌으니 display: flex 적극 활용 가능 */
 
+/*7-3*/
+
 * {
     box-sizing: border-box
 }
