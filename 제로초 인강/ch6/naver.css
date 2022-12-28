@@ -194,11 +194,20 @@ main {
     width: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0px;
+}
+
 #main-ad {
     display: inline-block;
     width: 740px;
     height: 120px;
-    background-color: #555;
+    background-color: #FFF;
     margin-top: 20px;
     vertical-align: top;
     margin-right: 8px;
@@ -209,9 +218,9 @@ main {
 #main-login {
     display: inline-block;
     width: 332px;
-    height: 150px;
+    height: 120px;
     margin-top: 20px;
-    background-color: #555;
+    background-color: #FFF;
     margin-right: 8px;
     margin-bottom: 8px;
     vertical-align: top;
@@ -220,24 +229,63 @@ main {
 #main-yeonhap-news {
     display: inline-block;
     width: 740px;
-    height: 120px;
+    height: 48px;
     margin-right: 8px;
     margin-bottom: 8px;
     background-color: #FFF;
 }
 
+#main-yeonhap-news h3 {
+    display: inline-block;
+}
+
+#main-yeonhap-news ol {
+    display: inline-block;
+}
+
 #main-stocks {
     display: inline-block;
-    width: 281px;
-    height: 47px;
-    background-color: #555;
+    width: 332px;
+    height: 48px;
+    background-color: #FFF;
     vertical-align: top;
 }
 
 #main-newsstand {
     display: inline-block;
     width: 740px;
-    height: 120px;
+    height: 246px;
+    background-color: white;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    vertical-align: top;
+}
+
+#main-newsstand h3 {
+    height: 45px;
+    border-bottom: 1px solid #ebeef3;
+}
+
+#main-newsstand ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#main-newsstand li {
+    float: left;
+    width: 123px;
+    height: 67px;
+    border-right: 1px solid #f1f3f6;
+    border-bottom: 1px solid #f1f3f6;
+    text-align: center;
+}
+
+#main-newsstand li img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    object-fit: scale-down;
 }
 
 #main-second-ad {
