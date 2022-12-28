@@ -1,6 +1,8 @@
 /* 선택자(selector)
 div tag는 tag명 생략 가능.*/
 
+/* CSS 우선순위 : !important > inline style > id > class(다른 어트리뷰트) >  tag */
+
 * {
     box-sizing: border-box
 }
@@ -16,8 +18,22 @@ body {
     width: 1130px;
 }
 
+.nav_green {
+    text-decoration: none;
+    margin-left: 2px;
+    color: #19ce60;
+    font-weight: 600;
+}
+
 .nav {
     text-decoration: none;
+    margin-left: 2px;
+    font-weight: 600;
+}
+
+.nav_mail {
+    text-decoration: none;
+    margin-left: 0px;
 }
 
 #header-search a h1 {
