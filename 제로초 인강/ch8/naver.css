@@ -29,6 +29,7 @@ position : absoulte ( 형제 태그일 때도 유효 )
 쌓임 맥락에서 이길수가 없다. 
 */
 
+/* 다른애 위에 겹치는거? z-index와 position 활용 */
 
 
 * {
@@ -354,3 +355,44 @@ h6 {
     width: 740px;
     height: 120px;
 }
+
+#main-category-top {
+    display: inline-block;
+    width: 100%;
+}
+
+#subject-all,
+#subject-list,
+#subject-prev,
+#subject-next {
+    float: left;
+    height: 45px;
+}
+
+#subject-list {
+    width: 589px;
+    margin: 0 8px;
+    background-color: white;
+}
+
+#subject-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#subject-list li {
+    float: left;
+}
+
+#subject-all,
+#subject-prev,
+#subject-next {
+    width: 45px;
+    background: white;
+    border: none;
+    border-left: 1px solid #ebeef3;
+}
+
+/* inline block끼리 붙으면 이상한 공간이 생기므로
+float left로 세로 공간을 잡아준다. */
