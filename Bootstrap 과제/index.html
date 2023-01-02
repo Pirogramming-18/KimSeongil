@@ -15,7 +15,44 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <!-- Modal -->
+      <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content bg-secondary">
+            <div class="modal-header text-white">
+              <h5 class="modal-title mx-auto text-center fs-5 fw-bolder" id="exampleModalLabel">피로그래밍 18기</h5>
+            </div>
+            <div class="modal-body text-white">
+              <p class="text-center fs-4 fw-bold lh-lg">파이팅!</p>
+              <p class="text-center fs-6 lh-base">모두들 아르샤 하느라 수고많으셨습니다!</p>
+              <p class="text-center fs-6 lh-base">힘들더라도 계속해서 달려봐요!</p>
+            </div>
+            <div class="modal-footer gap-2">
+              <a href="#" class="text-decoration-none">Download</a>
+              <button type="button" class="btn btn-info" data-bs-dismiss="modal">Ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="SubscribeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title mx-auto text-center fs-5 fw-bolder" id="exampleModalLabel">Nice-Job!</h5>
+            </div>
+            <div class="modal-body">
+              <p class="text-center fs-6 lh-base">You clicked the button but it doesn't</p>
+              <p class="text-center fs-6 lh-lg">actually go anywhere</p>
+              <p class="text-center fs-6 lh-lg m-3 text-muted">Learn more at Bootstrap</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="d-grid mx-auto col-12 btn btn-primary" data-bs-dismiss="modal">Ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- else -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
           <a href="#" class="navbar-brand m-1">Pirogramming</a>
           <button
@@ -31,11 +68,11 @@
           </button>
           <div class="collapse navbar-collapse justify-content-between ms-4" id="navbarNav">
             <ul class="navbar-nav gap-1">
-              <li class="nav-item"><a href="#" class="nav-link active text-primary">Kim-Seong-Il</a></li>
-              <li class="nav-item"><a href="#" class="nav-link active">Intro</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Highlights</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Gallary</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+              <li class="nav-item"><a href="#main" class="nav-link text-primary">Kim-Seong-Il</a></li>
+              <li class="nav-item"><a href="#intro" class="nav-link active">Intro</a></li>
+              <li class="nav-item"><a href="#highlights" class="nav-link">Highlights</a></li>
+              <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+              <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <!-- Button trigger modal -->
             <button
@@ -47,49 +84,145 @@
             >
               About
             </button>
-
-            <!-- Modal -->
-            <div
-              class="modal fade"
-              id="aboutModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content bg-secondary">
-                  <div class="modal-header text-white">
-                    <h5 class="modal-title mx-auto text-center fs-5 fw-bolder" id="exampleModalLabel">
-                      피로그래밍 18기
-                    </h5>
-                  </div>
-                  <div class="modal-body text-white">
-                    <p class="text-center fs-4 fw-bold lh-lg">파이팅!</p>
-                    <p class="text-center fs-6 lh-base">모두들 아르샤 하느라 수고많으셨습니다!</p>
-                    <p class="text-center fs-6 lh-base">힘들더라도 계속해서 달려봐요!</p>
-                  </div>
-                  <div class="modal-footer gap-2">
-                    <a href="#" class="text-decoration-none">Download</a>
-                    <button type="button" class="btn btn-info" data-bs-dismiss="modal">Ok</button>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </nav>
     </header>
-    <section id="intro">
-      <div class="container">
+    <section id="main">
+      <div class="container d-flex flex-column justify-content-center align-items-center text-center gap-3 min-vh-100">
         <h2 class="fs-2 fw-bolder">Pirogramming18</h2>
-        <h5>cheer up</h5>
-        <hr class="my-2" />
-        <button>Get Started</button>
+        <h5 class="fw-bolder">cheer up</h5>
+        <hr class="w-100" />
+        <button type="button" class="btn btn-primary">Get Started</button>
       </div>
     </section>
-    <section id="highlights"></section>
-    <section id="gallary"></section>
-    <section id="contact"></section>
+    <section id="intro">
+      <div
+        class="container-fluid bg-secondary d-flex flex-column justify-content-center align-items-center text-center gap-2 min-vh-100"
+      >
+        <h2 class="fs-1 fw-bold text-danger mb-3">Built On the Bootstrap Grid</h2>
+        <span class="text-white">Bootstrap's responsive grid comes in 4sizes or 'breakpoints': tiny(xs).</span>
+        <span class="text-white">small(sm), medium(md) and large(lg). These 4 grid cites enables you</span>
+        <span class="text-white mb-3">creat responsive layouts that behave accordingly on different sizes</span>
+        <button type="button" class="btn btn-light fw-bolder">Learn more</button>
+      </div>
+    </section>
+    <section id="highlights">
+      <div class="container-fluid bg-secondary d-flex flex-column justify-content-start text-center">
+        <h2 class="fs-1 fw-bold text-primary mt-5 mb-3">Flexible Layouts</h2>
+        <hr class="w-75 align-self-center" />
+        <div class="container-fluid mt-5">
+          <div class="row gap-5 mt-5">
+            <div class="col d-flex flex-column align-items-center gap-3">
+              <img src="./imac.png" class="float-start mb-3" alt="" />
+              <span class="text-white fs-4 fw-bolder">Responsive</span>
+              <span class="text-white fs-5 fw-normal">Yore cite looks good everywhere</span>
+            </div>
+            <div class="col d-flex flex-column align-items-center gap-3">
+              <img src="./checked.png" class="mx-auto mb-3" alt="" />
+              <span class="text-white fs-4 fw-bolder">Cusomizable</span>
+              <span class="text-white fs-5 fw-normal">Easy to theme and customize with SASS</span>
+            </div>
+            <div class="col d-flex flex-column align-items-center gap-3 mb-5">
+              <img src="./star.png" class="float-end mb-3" alt="" />
+              <span class="text-white fs-4 fw-bolder">Cusomizable</span>
+              <span class="text-white fs-5 fw-normal">A mature, well-tested, stable codebase</span>
+            </div>
+          </div>
+          <div class="row mt-5" id="gallery">
+            <div class="col mb-5">
+              <img src="./Yeouido_Seoul.jpg" width="400" alt="" />
+            </div>
+            <div class="col mb-5">
+              <img src="./pangyo.jpg" width="400" class="mx-auto" alt="" />
+            </div>
+            <div class="col mb-5 d-flex flex-column align-items-center">
+              <img src="./pangyo2.png" width="400" class="float-end" alt="" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col mb-5"><img src="./Yeouido_Seoul.jpg" width="400" alt="" /></div>
+            <div class="col mb-5">
+              <img src="./pangyo.jpg" width="400" class="mx-auto" alt="" />
+            </div>
+            <div class="col mb-5 d-flex flex-column align-items-center">
+              <img src="./pangyo2.png" width="400" class="float-end" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="gallery">
+      <div class="container text-center"></div>
+    </section>
+    <section id="contact">
+      <div class="container-fluid bg-secondary d-flex flex-column justify-content-start text-center vh-100">
+        <h2 class="fs-1 fw-bold text-primary mt-5 mb-3">Get in Touch</h2>
+        <hr class="w-75 align-self-center" />
+        <div class="mt-5 container text-center">
+          <div class="row mb-3">
+            <div class="col">
+              <input class="form-control" type="text" placeholder="name" aria-label="Search" />
+            </div>
+            <div class="col">
+              <input class="form-control" type="email" placeholder="email" aria-label="email" />
+            </div>
+            <div class="col">
+              <input class="form-control" type="text" placeholder="phone" aria-label="phone" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="col">
+              <textarea class="form-control mb-5" placeholder="Your messages here" id="textarea" rows="10"></textarea>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="d-grid col-3 mx-auto btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#SubscribeModal"
+          >
+            Send
+          </button>
+        </div>
+      </div>
+    </section>
+    <footer class="position-relative">
+      <div class="container-fluid bg-dark position-absolute bottom-0">
+        <!--Grid row-->
+        <div class="row gap-4 d-flex justify-content-center">
+          <!--Grid Column-->
+          <div class="col-lg-3 mt-4 ms-3">
+            <ul class="list-unstyled lh-base">
+              <a href="#" class="text-primary text-decoration-none fw-bolder">Information</a>
+              <li><a href="#" class="text-white text-decoration-none">Product</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Services</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Benefits</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 mt-4 ms-3">
+            <ul class="list-unstyled lh-base">
+              <li><a href="#" class="text-primary text-decoration-none fw-bolder">About</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Contact us</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Delivery Information</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 mt-4 ms-3">
+            <a href="#" class="text-primary text-decoration-none fw-bolder">Stay Posted</a>
+            <input class="form-control mt-3" type="email" placeholder="Tell me your email" aria-label="email" />
+            <button
+              type="button"
+              class="mt-2 mb-4 d-grid float-start btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#SubscribeModal"
+            >
+              Subscribe for updates
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
