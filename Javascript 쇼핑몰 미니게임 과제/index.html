@@ -2,33 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping</title>
     <link rel="stylesheet" href="style.css" />
     <script src="src/main.js" defer></script>
   </head>
   <body>
-    <header>
-      <div class="header__logo">
-        <img id="logo" src="/img/logo.png" alt="logo" />
-      </div>
-    </header>
-    <nav>
-      <div class="nav__filters">
-        <ul class="nav__filters__item">
-          <img src="/img/blue_t.png" alt="blue_t" />
-          <img src="/img/blue_p.png" alt="blue_p" />
-          <img src="/img/blue_s.png" alt="blue_s" />
-        </ul>
-        <ul class="nav__filters__button">
-          <button id="button_blue" class="nav__button">Blue</button>
-          <button id="button_yellow" class="nav__button">Yellow</button>
-          <button id="button_pink" class="nav__button">Pink</button>
-        </ul>
-      </div>
-    </nav>
-    <main>
-      <div class="main__itemList"></div>
-    </main>
+    <!-- Logo -->
+    <img src="img/logo.png" alt="Logo" class="logo" />
+    <!-- Buttons -->
+    <div id="buttons">
+      <button class="btn"><img src="img/blue_t.png" alt="tshirt" class="imgBtn" /></button>
+      <button class="btn"><img src="img/blue_p.png" alt="pants" class="imgBtn" /></button>
+      <button class="btn"><img src="img/blue_s.png" alt="skirt" class="imgBtn" /></button>
+      <button class="btn colorBtn blue">Blue</button>
+      <button class="btn colorBtn yellow">Yellow</button>
+      <button class="btn colorBtn pink">Pink</button>
+    </div>
+    <ul class="items">
+      <li class="item">
+        <img src="img/blue_t.png" alt="tshirt" class="item__thumbnail" />
+        <span class="item__description">male, large</span>
+      </li>
+    </ul>
+    <!-- Items -->
   </body>
 </html>
