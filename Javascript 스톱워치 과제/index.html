@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="src/main.js" defer></script>
+    <title>Piro-Stopwatch</title>
+  </head>
+  <body>
+    <div id="Features"></div>
+    <!-- Intro -->
+    <header>
+      <div id="intro">
+        <img class="timerImg" src="img/timer.png" alt="Watch" />
+        <h1>피로그래밍 스톱워치</h1>
+      </div>
+    </header>
+
+    <!-- Timer -->
+    <section id="timer">
+      <div class="time__container">
+        <span id="timer__span" class="timer">00:00</span>
+      </div>
+      <div class="buttons">
+        <button id="start" class="btn">start</button>
+        <button id="stop" class="btn">stop</button>
+        <button id="reset" class="btn">reset</button>
+      </div>
+    </section>
+
+    <!-- Records Tab -->
+    <section id="recordsTab">
+      <button class="check__all"></button>
+      <span>구간 기록</span>
+      <button class="delete__records">
+        <img class="deleteBtn" src="img/bin.png" alt="Delete" />
+        <img src="img/bin_hover.png" alt="Delete-hover" class="deleteBtn" />
+      </button>
+    </section>
+
+    <!-- Records -->
+    <ul id="records__container" class="records"></ul>
+
+    <!-- tips -->
+    <div id="notice"><span class="notice">마우스 스크롤을 이용해서 위의 구간 기록들을 넘겨보세요.</span></div>
+  </body>
+</html>

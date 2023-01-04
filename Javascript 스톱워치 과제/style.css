@@ -1,0 +1,212 @@
+@import "./reset.css";
+
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    font-family: 'LINESeedKR-Bd' !important;
+}
+
+:root {
+    /* colors */
+    --color-background: #bec7bf;
+    --color-buttongray: #E5E5E5;
+    --color-black: black;
+    --color-white: white;
+
+    /* size */
+    --shadow-default: 0.25rem 0.6rem 1rem 0px gray;
+    --shadow-button: 0.4rem 0.4rem 1rem -4px gray;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#intro {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+#intro img {
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+}
+
+#intro h1 {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+#timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-background);
+    width: 440px;
+    height: 256px;
+    border-radius: 40px;
+    box-shadow: var(--shadow-default);
+}
+
+.time__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 40%;
+    background-color: var(--color-white);
+    border-radius: 24px;
+    margin-bottom: 20px;
+}
+
+.time__container span {
+    font-size: 4rem;
+    margin-top: 1rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    outline: none;
+    box-shadow: var(--shadow-button);
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#recordsTab {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 520px;
+    height: 64px;
+    background-color: var(--color-background);
+    margin-top: 40px;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+}
+
+#recordsTab span {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.check__all {
+    width: 32px;
+    height: 32px;
+    border-color: black;
+    border-radius: 100%;
+    border-width: 3px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.delete__records {
+    background-color: transparent;
+    border: none;
+    width: 32px;
+    height: 32px;
+    position: relative;
+}
+
+.delete__records img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.delete__records img:first-child {
+    position: absolute;
+    opacity: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.delete__records img:last-child {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.delete__records:hover img:first-child {
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.delete__records:hover img:last-child {
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+}
+
+#records__container {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    width: 520px;
+    height: 23%;
+}
+
+#records__container::-webkit-scrollbar {
+    display: none
+        /* Chrome , Safari , Opera */
+}
+
+.records li {
+    /* 특정한 사이즈로 고정시켜줘보자. 퍼센테이지 사이즈를 이용하여 반응형으로 만들어보자. */
+    width: 100%;
+    height: 64px;
+    background-color: #E5E5E5;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.records li input {
+    margin-left: 61px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    border: 2px solid #bcbcbc;
+}
+
+.records li span {
+    margin-left: 130px;
+    font-size: 1.5rem;
+}
+
+#notice {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+#notice span {
+    color: rgb(59, 109, 92);
+}
