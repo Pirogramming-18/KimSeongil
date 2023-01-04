@@ -6,8 +6,110 @@
   --color-yellow: #fbbe28;
   --color-pink: #fd7f84;
   --color-light-grey: #dfdfdf;
+
+  /* size */
+  --base-space: 8px;
+  --size-button: 60px;
+  --size-border: 4px;
+  --size-thumbnail: 50px;
+  --font-size: 18px;
+
+  /* annimation */
+  --animation-duration: 300ms;
 }
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+
+  /* 정렬하기 */
+  justify-content: center;
+  align-items: center;
+
+  /* body height를 늘려줄 필요가 있음*/
+  height: 100vh;
+  /* viewport(window)의 100% */
+}
+
+.logo {
+  cursor: pointer;
+  transition: transform var(--animation-duration) ease;
+}
+
+.logo:hover,
+.btn:hover {
+  transform: scale(1.1);
+}
+
+#buttons {
+  /* button들의 컨테이너 만들기 */
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform var(--animation-duration) ease;
+  margin-right: 8px;
+}
+
+.imgBtn {
+  /* image button 크기 조절 */
+  width: var(--size-button);
+  height: var(--size-button);
+}
+
+.colorBtn {
+  font-size: var(--font-size);
+  padding: calc(var(--base-space) *2);
+  border-radius: var(--size-border);
+}
+
+.blue {
+  background-color: var(--color-blue);
+}
+
+.yellow {
+  background-color: var(--color-yellow);
+}
+
+.pink {
+  background-color: var(--color-pink);
+}
+
+.items {
+  /* 특정한 사이즈로 고정시켜줘보자. 퍼센테이지 사이즈를 이용하여 반응형으로 만들어보자. */
+  width: 60%;
+  height: 60%;
+  list-style: none;
+  padding-left: 0;
+
+  /* page전체 스크롤 방지*/
+  overflow-y: scroll;
+}
+
+.item {
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  padding: var(--base-space);
+  margin-bottom: var(--base-space);
+}
+
+.item__thumbnail {
+  width: var(--size-thumbnail);
+  height: var(--size-thumbnail)
+}
+
+.item__description {
+  margin-left: var(--base-space);
+  font-size: var(--font-size);
 }
