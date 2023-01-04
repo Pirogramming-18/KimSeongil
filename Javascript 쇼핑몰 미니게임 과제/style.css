@@ -92,7 +92,7 @@ body {
   list-style: none;
   padding-left: 0;
 
-  /* page전체 스크롤 방지*/
+  /* page전체 스크롤 방지 */
   overflow-y: scroll;
 }
 
