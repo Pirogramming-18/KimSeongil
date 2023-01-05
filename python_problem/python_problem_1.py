@@ -1,29 +1,39 @@
 num = 0
 
-while True:
-    try:
-        input_num = int(input("부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) : "))
-        if 1 <= input_num <= 3:
+while num < 31:
+    while True:
+        try:
+            input_num = int(input("부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) : "))
+            if 1 <= input_num <= 3:
+                break
+            else:
+                print('1,2,3 중 하나를 입력하세요.')
+        except ValueError:
+            print('정수를 입력하세요.')
+
+    for _ in range(input_num):
+        num += 1
+        print(f'playerA : {num}')
+        if num == 31:
+            # print('playerB win!')
             break
-        else:
-            print('1,2,3 중 하나를 입력하세요.')
-    except ValueError:
-        print('정수를 입력하세요.')
 
-for _ in range(input_num):
-    num += 1
-    print(f'playerA : {num}')
+    if num >= 31:
+        break
 
-while True:
-    try:
-        input_num = int(input("부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) : "))
-        if 1 <= input_num <= 3:
+    while True:
+        try:
+            input_num = int(input("부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) : "))
+            if 1 <= input_num <= 3:
+                break
+            else:
+                print('1,2,3 중 하나를 입력하세요.')
+        except ValueError:
+            print('정수를 입력하세요.')
+
+    for _ in range(input_num):
+        num += 1
+        print(f'playerB : {num}')
+        if num == 31:
+            # print('playerA win!')
             break
-        else:
-            print('1,2,3 중 하나를 입력하세요.')
-    except ValueError:
-        print('정수를 입력하세요.')
-
-for _ in range(input_num):
-    num += 1
-    print(f'playerB : {num}')
