@@ -12,10 +12,12 @@ elif 80 <= volume < 100:
 else:
     print("My ears are hurting! :(")
 
-def hi(name):
-    print('Hi ' + name + '!')
 
-girls = ['Rachel', 'Monica', 'Phoebe', 'Ola', 'You']
+def hi(name):
+    print("Hi " + name + "!")
+
+
+girls = ["Rachel", "Monica", "Phoebe", "Ola", "You"]
 for name in girls:
     hi(name)
-    print('Next girl')
+    print("Next girl")
