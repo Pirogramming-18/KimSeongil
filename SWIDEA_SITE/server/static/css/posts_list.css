@@ -1,0 +1,136 @@
+@import "reset.css";
+
+*,
+a {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+:root {
+    --color-white: white;
+    --color-black: black;
+    --color-gray: rgb(180, 180, 180);
+    --color-lightgray: #E5E5E5;
+}
+
+main {
+    max-width: 1320px;
+    width: 100%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--color-gray);
+    background-color: white;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+#new_review_button {
+    font-weight: 500;
+}
+
+.sort__div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 32px;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+#sort {
+    margin-right: 1rem;
+}
+
+.sort__filter {
+    width: 103.5px;
+    border: 1px solid var(--color-gray);
+}
+
+.review__container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.review__item {
+    margin-top: 3rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--color-lightgray);
+}
+
+.review__item p {
+    margin: 0.5rem 1.5rem;
+}
+
+.review__title {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.review-img {
+    margin: 1.5rem 0;
+    width: 75%;
+    background-color: gray;
+    overflow: hidden;
+    align-self: center;
+}
+
+.color__gray {
+    color: var(--color-gray);
+}
+
+.color__black {
+    color: var(--color-black);
+}
+
+.review__end {
+    margin-bottom: 2rem !important;
+}
+
+.review-img .img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 580px) {
+    .review__container {
+        justify-content: center;
+    }
+
+    .review__item {
+        flex: 0 0 auto;
+        width: 80%
+    }
+}
+
+@media screen and (min-width: 580px) and (max-width: 960px) {
+    .review__item {
+        flex: 0 0 auto;
+        width: 25%
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .review__item {
+        flex: 0 0 auto;
+        width: 20%
+    }
+}
