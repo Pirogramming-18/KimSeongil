@@ -16,3 +16,11 @@ class Idea(models.Model):
     interest = models.IntegerField(default=0)
     devtool = models.ForeignKey(
         Tool, on_delete=models.SET_NULL, related_name='idea_tool', null=True)
+
+    def is_favorited(self):
+        return IdeaStar.objects.filter(idea=self).exists()
+
+
+class IdeaStar(models.Model):
+    idea = models.ForeignKey(
+        Idea, on_delete=models.CASCADE, related_name='like_idea')

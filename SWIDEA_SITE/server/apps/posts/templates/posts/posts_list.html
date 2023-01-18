@@ -15,15 +15,74 @@
         <link rel="stylesheet" href="{% static 'css/posts_list.css' %}" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
         <title>my SW Idea Manage</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body>
         <nav class="p-3 navbar sticky-top navbar-expand-lg">
-            <div class="container-fluid">
-                <a href="#" class="navbar-brand">My<span style="color: #1980fc">SW Idea</span>&nbsp;Manage</a>
-                <a id="new_review_button" class="btn text-white btn-primary" href="/review/create" role="button">새 리뷰 작성</a>
-            </div>
+            <ul class="nav">
+                <a href="/" class="navbar-brand">My&nbsp;<span style="color: #1980fc">SW Idea</span>&nbsp;Manage</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/posts/create/idea">아이디어 등록</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">아이디어 관리</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/posts/create/tool">개발툴 등록</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">개발툴 관리</a>
+                </li>
+            </ul>
         </nav>
-        <main></main>
+        <main>
+            <div class="sort__div">
+                <form id="sort" action="{%url 'posts:list'%}" method="GET">
+                    {% csrf_token %}
+                    <select class="sort__filter" name="sort" id="sort__select" onchange="submit()">
+                        <option value="">--정렬 기준--</option>
+                        <option value="likes">찜하기순</option>
+                        <option value="id">등록순</option>
+                        <option value="recent">최신순</option>
+                        <option value="title">이름순</option>
+                    </select>
+                </form>
+            </div>
+            <div class="review__container">
+                {% for idea in ideas %}
+                <div class="review__item">
+                    <div class="review-img">
+                        {% if idea.image %}
+                        <img src="{{idea.image.url}}" alt="image" class="img-fluid" />
+                        {% endif %}
+                        <form action="{% url 'posts:list' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="favorite_pk" value="{{ idea.pk }}" />
+                            <button type="submit" name="action" value="favorite" class="fav-icon {% if idea.is_favorited %}selected{% else %}unselected{% endif %}">
+                                {% if idea.is_favorited %}
+                                <img src="{% static 'image/selected_star.png' %}" alt="favorites" />
+                                {% else %}
+                                <img src="{% static 'image/unselected_star.png' %}" alt="favorites" />
+                                {% endif %}
+                            </button>
+                        </form>
+                    </div>
+                    <p class="review__title"><a href="/posts/{{ idea.pk }}">{{idea.title}}</a></p>
+                    <p class="color__black"><span class="color__gray">예상 개발 툴</span> {{idea.devtool.name}}</p>
+                    <form action="{% url 'posts:list' %}" id="interest" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="idea_pk" value="{{ idea.pk }}" />
+                        <p style="margin-bottom: 2rem" class="color__black">
+                            <span class="color__gray">아이디어 관심도</span>
+                            <button type="submit" name="minus" class="plus__minus">-</button>
+                            {{idea.interest}}
+                            <button type="submit" name="plus" class="plus__minus">+</button>
+                        </p>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

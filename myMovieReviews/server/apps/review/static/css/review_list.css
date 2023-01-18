@@ -34,10 +34,6 @@ main {
     font-size: 1.3rem;
 }
 
-#new_review_button {
-    font-weight: 500;
-}
-
 .sort__div {
     display: flex;
     flex-direction: row;
