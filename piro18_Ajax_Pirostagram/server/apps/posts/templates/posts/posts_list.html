@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pirostagram</title>
+        <link rel="stylesheet" href="{% static 'css/list.css' %}" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- header 공간 -->
+        {% for user in users %}
+        <header>
+            {% if user.photo %}
+            <div class="profile">
+                <img class="profile__image" src="{{ user.photo.url }}" alt="profile_image" />
+                <a href="https://www.instagram.com/dangerousmanleebyeonggeon/" class="user__name">{{ user.name }}</a>
+            </div>
+            {% endif %}
+        </header>
+        {% endfor %}
+
+        <!-- 이미지 공간 -->
+        {% for post in posts %} {% if post.photo %}
+        <p>
+            <img class="post__image" src="{{ post.photo.url }}" alt="image" />
+        </p>
+        {% endif %}
+
+        <!-- 기능 공간 -->
+        <div class="post__feature">
+            <form>
+                <input type="hidden" name="like_pk" value="{{post.pk}}" />
+                <button class="like__button" type="button" onclick="onClickLike({{post.id}})">
+                    {% if post.is_favorited %}
+                    <img class="like__img icon icon__left" src="{% static 'image/heart.png' %}" alt="heart" />
+                    {% else %}
+                    <img class="like__img icon icon__left" src="{% static 'image/unheart.png' %}" alt="unheart" />
+                    {% endif %}
+                </button>
+            </form>
+            <img class="icon icon__left" src="{% static 'image/comment.png' %}" alt="comment" />
+            <img class="icon icon__left" src="{% static 'image/send.png' %}" alt="send" />
+            <img class="icon icon__bookmark" src="{% static 'image/bookmark.png' %}" alt="bookmark" />
+        </div>
+        <!-- 좋아요 개수 -->
+        <p class="like__num" style="margin-bottom: 0.5rem; font-weight: 500">좋아요 {{ like_num }}개</p>
+
+        <!-- 본문 -->
+        {% for user in users %}
+        <span style="font-weight: 500; margin-bottom: 0.5rem">{{user.name}}</span>
+        <div class="post__content" style="margin-bottom: 1rem">{{ post.content|linebreaksbr }}</div>
+        {% endfor %}
+
+        <!-- 댓글 공간 -->
+
+        <div class="comment__space">
+            {% for comment in comments %}
+            <p class="comment__one__{{ comment.id }}" style="font-weight: 500">
+                {{comment.user}} <span class="comments">{{comment.content}}</span> {% if comment %}
+                <button class="delete__cmt" onclick="onClickCommentDelete({{comment.id}})">삭제</button> {% endif %}
+            </p>
+            {% endfor %}
+        </div>
+
+        <textarea style="margin-top: 0.5rem" class="comment__content" placeholder="댓글 달기..."></textarea>
+        <button class="comment__button" type="button" onclick="onClickComment({{post.id}})">게시</button>
+        {% endfor %}
+
+        <!-- Javascript -->
+        <script>
+            const strip = (string) => {
+                return string.replace(/^\s+|\s+$/g, "");
+            };
+
+            const requestLike = new XMLHttpRequest();
+
+            const onClickLike = (id) => {
+                const url = "/like_ajax/";
+                requestLike.open("POST", url, true);
+                requestLike.setRequestHeader("Content-Type", "application/json");
+                requestLike.send(JSON.stringify({ id: id }));
+            };
+
+            requestLike.onreadystatechange = () => {
+                if (requestLike.readyState === XMLHttpRequest.DONE) {
+                    if (requestLike.status < 400 && JSON.parse(requestLike.response)["res"] === "like") {
+                        console.log(JSON.parse(requestLike.response)["res"]);
+                        const { id, liked } = JSON.parse(requestLike.response);
+                        const element = document.getElementsByClassName("like__img");
+                        let num = parseInt(document.querySelector(`.like__num`).innerHTML.match(/\d+/)[0]);
+
+                        if (liked === true) {
+                            element[0].setAttribute("src", "{% static 'image/heart.png' %}");
+                            const count = Number(num) + 1;
+                            document.querySelector(`.like__num`).innerHTML = `좋아요 ${count}개`;
+                        } else {
+                            element[0].setAttribute("src", "{% static 'image/unheart.png' %}");
+                            const count = Number(num) - 1;
+                            document.querySelector(`.like__num`).innerHTML = `좋아요 ${count}개`;
+                        }
+                    }
+
+                    if (requestLike.status < 400 && JSON.parse(requestLike.response)["res"] === "comment") {
+                        const { id, user_name, content, cmt_id } = JSON.parse(requestLike.response);
+                        const cmt = document.querySelector(`.comment__space`);
+                        const newComment = document.createElement("span");
+                        newComment.innerHTML = `
+                            <p class="comment__one__${cmt_id}" style="font-weight: 500">${user_name} <span class="comments">${content}</span></p>
+                        `;
+                        cmt.appendChild(newComment);
+                        newComment.innerHTML = `
+                            <p class="comment__one__${cmt_id}" style="font-weight: 500">${user_name} <span class="comments">${content}&nbsp;</span><button class="delete__cmt" onclick="onClickCommentDelete(${cmt_id})">삭제</button></p>
+                        `;
+                    }
+
+                    if (requestLike.status < 400 && JSON.parse(requestLike.response)["res"] === "comment_delete") {
+                        const { id } = JSON.parse(requestLike.response);
+                        console.log(id);
+                        const cmt = document.querySelector(`.comment__one__${id}`);
+                        console.log(cmt);
+                        cmt.innerHTML = ``;
+                    }
+                }
+            };
+
+            const onClickComment = (id) => {
+                const url = "/comment_ajax/";
+                const comment_value = document.querySelector(`.comment__content`).value;
+                requestLike.open("POST", url, true);
+                requestLike.setRequestHeader("Content-Type", "application/json");
+                requestLike.send(JSON.stringify({ id: id, value: comment_value }));
+            };
+
+            const onClickCommentDelete = (id) => {
+                const url = "/comment_delete_ajax/";
+                requestLike.open("POST", url, true);
+                requestLike.setRequestHeader("Content-Type", "application/json");
+                requestLike.send(JSON.stringify({ id: id }));
+            };
+        </script>
+    </body>
+</html>
